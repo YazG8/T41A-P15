@@ -67,8 +67,8 @@ def test_stock():
         cur.execute(query,(5,));
         result=cur.fetchall();
         nombres=[row[1] for row in result]
-        assert 'mousepad' in nombres
-        assert 'monitor' in nombres
+        assert 'Mousepad' in nombres
+        assert 'Tarjeta' in nombres
         conn.commit()
     except Exception as e:
         raise e
@@ -125,4 +125,5 @@ def test_empleados():
         conn.rollback()
         cur.close()
         conn.close()
+
 
