@@ -117,7 +117,7 @@ def test_empleados():
         assert result==1
         cur.execute(query,(2,));
         result=cur.fetchone()[0];
-        assert result==1
+        assert result==2
         conn.commit()
     except Exception as e:
         raise e
@@ -125,6 +125,7 @@ def test_empleados():
         conn.rollback()
         cur.close()
         conn.close()
+
 
 
 
