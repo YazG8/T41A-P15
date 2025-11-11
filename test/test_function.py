@@ -22,7 +22,6 @@ def test_descuento():
   except Exception as e:
       raise e
   finally:
-      #En caso de cualquier fallo en el try, el finally hará la limpieza.
       conn.rollback()
       cur.close()
       conn.close()
@@ -39,17 +38,16 @@ def test_descuento():
     try:
         cur = conn.cursor()
         query="SELECT validar_correo(%s)"
-        cur.execute(query,('cristiangodinez',));
+        cur.execute(query,('yazg8',));
         result=cur.fetchone()[0];
         assert result is False;
-        cur.execute(query,('cristianlimones3@gmail.com',));
+        cur.execute(query,('yazmin.guerreroguev@gmail.com',));
         result=cur.fetchone()[0];
         assert result is True;
         conn.commit()
     except Exception as e:
         raise e
     finally:
-        #En caso de cualquier fallo en el try, el finally hará la limpieza.
         conn.rollback()
         cur.close()
         conn.close()
@@ -75,7 +73,6 @@ def test_stock():
     except Exception as e:
         raise e
     finally:
-        #En caso de cualquier fallo en el try, el finally hará la limpieza.
         conn.rollback()
         cur.close()
         conn.close()
@@ -99,7 +96,6 @@ def test_fecha():
     except Exception as e:
         raise e
     finally:
-        #En caso de cualquier fallo en el try, el finally hará la limpieza.
         conn.rollback()
         cur.close()
         conn.close()
@@ -126,7 +122,7 @@ def test_empleados():
     except Exception as e:
         raise e
     finally:
-        #En caso de cualquier fallo en el try, el finally hará la limpieza.
         conn.rollback()
         cur.close()
         conn.close()
+
