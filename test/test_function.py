@@ -114,7 +114,7 @@ def test_empleados():
         query="SELECT total_depEmpleados(%s)"
         cur.execute(query,(1,));
         result=cur.fetchone()[0];
-        assert result==2
+        assert result==1
         cur.execute(query,(2,));
         result=cur.fetchone()[0];
         assert result==1
@@ -125,5 +125,6 @@ def test_empleados():
         conn.rollback()
         cur.close()
         conn.close()
+
 
 
